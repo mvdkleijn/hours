@@ -19,11 +19,11 @@ func main() {
 	fmt.Printf("When answering the following questions, assume a full-time, 40 hour per week scenario:\n\n")
 
 	// Ask the four questions and store the responses
-	fmt.Print("Number of 8-hour PUBLIC holidays? ")
+	fmt.Print("Number of 8-hour paid PUBLIC holidays? ")
 	scanner.Scan()
 	responses["publicHolidaysPerYear"] = scanner.Text()
 
-	fmt.Print("Number of 8-hour PERSONAL holidays? ")
+	fmt.Print("Number of 8-hour paid PERSONAL holidays? ")
 	scanner.Scan()
 	responses["personalHolidaysPerYear"] = scanner.Text()
 
@@ -134,7 +134,7 @@ func main() {
 	// Doublecheck: what are the hours I should book?
 	bookableHours := (weeksPerYear * 40) * (partTimePercentage / 100)
 
-	fmt.Printf("Given %.2f days per week with %.2f public holidays & %.2f personal holidays at a %.2f part-time percentage\n(Use 8-hour days.)\n\n", 5.0, publicHolidaysPerYear, personalHolidaysPerYear, partTimePercentage)
+	fmt.Printf("Given %.2f days per week with %.2f public holidays & %.2f personal holidays at a %.2f part-time percentage\n(Using 8-hour days.)\n\n", 5.0, publicHolidaysPerYear, personalHolidaysPerYear, partTimePercentage)
 
 	fmt.Printf("In a year there are: \n\n")
 	fmt.Printf("Public holidays: %.2f\n", publicHolidaysPerYear)
@@ -150,4 +150,7 @@ func main() {
 	fmt.Printf("Target hours per quarter: %.2f\n", parttimeTargetHoursPerYear/personalDaysPerWeek)
 	fmt.Printf("Possible over target hours: %.2f\n", workableHoursPerYear-extraFreeHours-parttimeTargetHoursPerYear)
 	fmt.Printf("Possible over target earnings: € %.2f\n\n", (workableHoursPerYear-extraFreeHours-parttimeTargetHoursPerYear)*overTargetCompensation)
+
+	fmt.Print("How you found this helpful! (any key to continue) ")
+	scanner.Scan()
 }
