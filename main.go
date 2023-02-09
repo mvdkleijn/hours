@@ -23,7 +23,7 @@ func main() {
 	// Target hours per year
 	fmt.Print("Target number of hours based on 40 hour work week? (usually between 1600 and 1900) ")
 	scanner.Scan()
-	targetHoursPerYear = scanner.Text()
+	targetHoursPerYear, _ := strconv.ParseFloat(scanner.Text(), 32)
 	
 	fmt.Print("Number of 8-hour paid PUBLIC holidays? ")
 	scanner.Scan()
