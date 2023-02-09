@@ -19,6 +19,12 @@ func main() {
 	fmt.Printf("When answering the following questions, assume a full-time, 40 hour per week scenario:\n\n")
 
 	// Ask the four questions and store the responses
+	
+	// Target hours per year
+	fmt.Print("Target number of hours based on 40 hour work week? (usually between 1600 and 1900) ")
+	scanner.Scan()
+	targetHoursPerYear = scanner.Text()
+	
 	fmt.Print("Number of 8-hour paid PUBLIC holidays? ")
 	scanner.Scan()
 	responses["publicHolidaysPerYear"] = scanner.Text()
@@ -97,9 +103,6 @@ func main() {
 	}
 
 	var weeksPerYear, workableDaysPerYear, workableHoursPerYear float64
-
-	// Target hours per year
-	targetHoursPerYear := 1600.0
 
 	// Number of weeks in a year
 	weeksPerYear = 52
