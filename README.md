@@ -20,6 +20,7 @@ Disclaimer: YMMV, No guarantees, rough code
 
 ```
 GOOS=windows GOARCH=amd64 go build -o bin/hours.exe main.go
-GOOS=darwin GOARCH=amd64 go build -o bin/hours-darwin main.go
+GOOS=darwin GOARCH=amd64 go build -o bin/hours-mac-x86 main.go
+GOOS=darwin GOARCH=arm64 go build -o bin/hours-mac-arm main.go
 GOOS=linux GOARCH=amd64 go build -o bin/hours-linux main.go
 ```
